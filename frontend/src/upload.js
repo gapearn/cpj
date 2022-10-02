@@ -1,8 +1,15 @@
-import React from "react";
+import React ,{ useState } from "react";
 
-const upload = () => {
+const Upload = () => {
+  const [img, setImage] = useState(null);
+
+  const handleImage = (e) => {
+    setImage(e.target.files[0]);
+  };
+
   const handleUpload = () => {
     var fileUpload = document.getElementById("fileinput");
+
 
     //Check whether the file is valid Image.
     var regex = new RegExp("([a-zA-Z0-9s_\\.-:])+(.jpg|.jpeg)$");
@@ -40,15 +47,16 @@ const upload = () => {
             }
             alert("Uploaded image has valid Height, Width and Size.");
             const formUpload = new FormData();
-            formUpload.append("image", fi);
+            formUpload.append("image", img);
+            console.log(fi.files)
             const option = {
               method: "POST",
               body: formUpload,
             };
-            fetch("http://localhost:8080/upload", option).then(
-              () => (window.location.href = "/sucess")
+            fetch("http://localhost:8080/upload/", option).then(
+              () => (window.location.href = "/success")
             );
-            return handleUpload;
+            return true;
           };
         };
       } else {
@@ -63,10 +71,10 @@ const upload = () => {
 
   return (
     <div style={{ marginLeft: "20%", marginTop: "10%" }}>
-      <input type="file" id="fileinput" />
+      <input type="file" id="fileinput" onChange={handleImage} />
       <button onClick={handleUpload}>upload</button>
     </div>
   );
 };
 
-export default upload;
+export default Upload;

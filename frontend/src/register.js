@@ -34,7 +34,7 @@ const register = () => {
         </p>
         <p>
           <button style={{ marginTop: "1%" }} type="submit">
-            Login
+            Register
           </button>
         </p>
         <a href="/register">new member ?</a>
