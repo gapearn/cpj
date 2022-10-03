@@ -46,7 +46,8 @@ const Login = () => {
             },
           ]}
         >
-          <Input placeholder="Username" />
+          <p>username</p>
+          <Input/>
         </Form.Item>
         <Form.Item
           name="password"
@@ -57,20 +58,24 @@ const Login = () => {
             },
           ]}
         >
-          <Input type="password" placeholder="Password" />
+          <p>password</p>
+          <Input type="password"  />
         </Form.Item>
         <Form.Item>
-          <Button type="primary" htmlType="submit">
-            Submit
+          <Button
+            type="primary"
+            style={{ backgroundColor: "#E9A99C" , borderColor:"white"}}
+            htmlType="submit"
+          >
+            login
           </Button>
         </Form.Item>
       </Form>
       <Form.Item>
         <div style={{ textAlign: "left" }}>
-          new member? <Link to="/">REGISTER</Link>
+          <Link style={{color:"#E9A99C"}} to="/">new member? </Link>
         </div>
       </Form.Item>
-
     </div>
   );
 };

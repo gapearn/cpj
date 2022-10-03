@@ -1,5 +1,4 @@
 import { Button, Form, Input } from "antd";
-import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import styles from "./global.module.css";
 
 import axios from "axios";
@@ -45,7 +44,8 @@ const Register = () => {
             },
           ]}
         >
-          <Input placeholder="Username" />
+          <p>username</p>
+          <Input />
         </Form.Item>
         <Form.Item
           name="password"
@@ -56,11 +56,16 @@ const Register = () => {
             },
           ]}
         >
-          <Input type="password" placeholder="Password" />
+          <p>password</p>
+          <Input type="password" />
         </Form.Item>
         <Form.Item>
-          <Button type="primary" htmlType="submit">
-            Submit
+          <Button
+            style={{ backgroundColor: "#E9A99C", borderColor: "white" }}
+            type="primary"
+            htmlType="submit"
+          >
+            register
           </Button>
         </Form.Item>
       </Form>
