@@ -14,7 +14,7 @@ const Login = () => {
       .post("/checkUser", user)
       .then(function ({ data: { founduser } }) {
         console.log(founduser);
-        if (founduser > 0) navigate("/upload-img");
+        if (founduser > 0) navigate("/upload");
         else message.error("User not found");
       })
       .catch(function (error) {
@@ -70,6 +70,7 @@ const Login = () => {
           new member? <Link to="/">REGISTER</Link>
         </div>
       </Form.Item>
+
     </div>
   );
 };
