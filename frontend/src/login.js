@@ -37,7 +37,12 @@ function Login() {
             Login
           </button>
         </p>
-        <a href="/register">new member ?</a>
+        <a
+          style={{ color: "blue" }}
+          onClick={() => (window.location.href = "/register")}
+        >
+          new member?
+        </a>
       </form>
     </div>
   );

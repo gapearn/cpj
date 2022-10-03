@@ -12,7 +12,7 @@ const register = () => {
       }),
     };
     fetch("http://localhost:8080/", option).then(
-      () => (window.location.href = "/upload")
+      () => (window.location.href = "/")
     );
 
     return console.log(e.target[0].value);
@@ -37,7 +37,6 @@ const register = () => {
             Register
           </button>
         </p>
-        <a href="/register">new member ?</a>
       </form>
     </div>
   );
