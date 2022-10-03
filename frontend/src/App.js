@@ -1,23 +1,22 @@
 import "./App.css";
-import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import LoginPage from "../src/login";
-import RegisterPage from "../src/register";
-import UploadPage from "../src/upload";
-import SuccessPage from "../src/success";
+import Register from "./pages/register";
+import Login from "./pages/login";
+import UploadImg from "./pages/upload-img";
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import axios from "axios";
+
+axios.defaults.baseURL = "http://localhost:8080";
 
 function App() {
   return (
-    <div>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
-          <Route path="/upload" element={<UploadPage />} />
-          <Route path="/success" element={<SuccessPage />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/upload" element={<UploadImg />} />
+      </Routes>
+    </Router>
   );
 }
 
