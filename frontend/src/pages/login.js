@@ -1,5 +1,4 @@
 import { Button, Form, Input, message } from "antd";
-import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import styles from "./global.module.css";
 
 import axios from "axios";
@@ -28,7 +27,7 @@ const Login = () => {
 
   return (
     <div className={styles.container}>
-      <h1>LOG IN</h1>
+      <h1>LOGIN</h1>
       <Form
         name="login"
         onFinish={onFinish}
@@ -37,34 +36,18 @@ const Login = () => {
         className={styles.form}
         size="large"
       >
-        <Form.Item
-          name="username"
-          rules={[
-            {
-              required: true,
-              message: "Please input your username!",
-            },
-          ]}
-        >
-          <p>username</p>
-          <Input/>
+        <p>username</p>
+        <Form.Item name="username">
+          <Input />
         </Form.Item>
-        <Form.Item
-          name="password"
-          rules={[
-            {
-              required: true,
-              message: "Please input your password!",
-            },
-          ]}
-        >
-          <p>password</p>
-          <Input type="password"  />
+        <p>password</p>
+        <Form.Item name="password">
+          <Input type="password" />
         </Form.Item>
         <Form.Item>
           <Button
             type="primary"
-            style={{ backgroundColor: "#E9A99C" , borderColor:"white"}}
+            style={{ backgroundColor: "#E9A99C", borderColor: "white" }}
             htmlType="submit"
           >
             login
@@ -73,7 +56,9 @@ const Login = () => {
       </Form>
       <Form.Item>
         <div style={{ textAlign: "left" }}>
-          <Link style={{color:"#E9A99C"}} to="/">new member? </Link>
+          <Link style={{ color: "#E9A99C" }} to="/">
+            new member?{" "}
+          </Link>
         </div>
       </Form.Item>
     </div>

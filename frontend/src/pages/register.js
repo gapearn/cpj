@@ -8,7 +8,6 @@ const Register = () => {
   let navigate = useNavigate();
 
   const onFinish = async (user) => {
-    console.log("Success:", user);
     await axios
       .post("/", user)
       .then(function ({ status }) {
@@ -35,28 +34,12 @@ const Register = () => {
         className={styles.form}
         size="large"
       >
-        <Form.Item
-          name="username"
-          rules={[
-            {
-              required: true,
-              message: "Please input your username!",
-            },
-          ]}
-        >
-          <p>username</p>
+        <p>username</p>
+        <Form.Item name="username">
           <Input />
         </Form.Item>
-        <Form.Item
-          name="password"
-          rules={[
-            {
-              required: true,
-              message: "Please input your password!",
-            },
-          ]}
-        >
-          <p>password</p>
+        <p>password</p>
+        <Form.Item name="password">
           <Input type="password" />
         </Form.Item>
         <Form.Item>
